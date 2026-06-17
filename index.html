@@ -32,7 +32,7 @@ body{
 /* البانر - أطول بنسبة بسيطة */
 .banner{
     width:84%;
-    height:210px; /* كانت 190px */
+    height:210px;
     margin:22px auto 10px;
     border-radius:24px;
     overflow:hidden;
@@ -56,13 +56,13 @@ body{
     font-weight:bold;
 }
 
-/* ===== المستطيل الجديد تحت البانر - أطول بنسبة بسيطة ===== */
+/* ===== المستطيل الجديد تحت البانر ===== */
 .notification-bar {
     width:88%;
     margin:0 auto 16px;
     background:#fff;
     border-radius:14px;
-    padding:20px 18px; /* كانت 16px 18px */
+    padding:20px 18px;
     display:flex;
     align-items:center;
     gap:14px;
@@ -70,7 +70,6 @@ body{
     cursor:pointer;
 }
 
-/* الأيقونة - صورة PNG بدون خلفية */
 .notification-bar .notif-icon {
     width:32px;
     height:32px;
@@ -107,7 +106,7 @@ body{
     line-height:1.3;
 }
 
-/* البطاقات - أطول بنسبة بسيطة */
+/* البطاقات */
 .grid{
     width:88%;
     margin:auto;
@@ -118,7 +117,7 @@ body{
 
 .card{
     background:#fff;
-    height:140px; /* كانت 125px */
+    height:140px;
     border-radius:14px;
     display:flex;
     flex-direction:column;
@@ -133,7 +132,6 @@ body{
     margin-bottom:10px;
 }
 
-/* أيقونة الصورة داخل البطاقة */
 .card .card-icon-img {
     width:42px;
     height:42px;
@@ -189,7 +187,7 @@ body{
     color:#cfcfcf;
 }
 
-/* ===== صفحة الإعدادات ===== */
+/* ===== صفحة الإعدادات - معدلة ===== */
 .settings-container{
     display:none;
     width:100%;
@@ -206,17 +204,18 @@ body{
 }
 
 .page-title{
-    padding:22px 18px;
+    padding:18px 18px 10px; /* قللت padding السفلي */
     font-size:18px;
     font-weight:600;
     color:#222;
 }
 
+/* المربع الشخصي - أقصر */
 .profile-card{
     background:#fff;
     width:calc(100% - 24px);
     margin:0 auto;
-    height:160px;
+    height:130px; /* كانت 160px */
     border-radius:16px;
     display:flex;
     justify-content:center;
@@ -232,14 +231,14 @@ body{
 }
 
 .avatar{
-    width:64px;
-    height:64px;
+    width:60px; /* كانت 64px */
+    height:60px; /* كانت 64px */
     border:3px solid #d5d5d5;
     border-radius:50%;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:24px;
+    font-size:22px; /* كانت 24px */
     color:#b5b5b5;
 }
 
@@ -248,10 +247,11 @@ body{
     color:#a5a5a5;
 }
 
+/* قائمة الإعدادات - أقصر ومرفوعة للأعلى */
 .menu-card{
     background:#fff;
     width:calc(100% - 24px);
-    margin:14px auto 20px;
+    margin:8px auto 20px; /* قللت margin-top من 14px إلى 8px */
     border-radius:16px;
     overflow:hidden;
 }
@@ -260,7 +260,7 @@ body{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:20px;
+    padding:14px 20px; /* كانت 20px 20px */
     text-decoration:none;
     color:#222;
     transition:.2s;
@@ -343,7 +343,6 @@ body{
         <div class="banner-title">أهلا</div>
     </div>
 
-    <!-- ===== المستطيل الجديد ===== -->
     <div class="notification-bar" onclick="alert('تنبيهاتي')">
         <div class="notif-icon">
             <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQtvjtePMpB8NQDMqTDQg_QUGAYY0QV4VnmLeqioDSZ55NcRmkX" alt="icon">
@@ -355,22 +354,18 @@ body{
     </div>
 
     <div class="grid">
-        <!-- الشمال: أكاديمي -->
         <div class="card" onclick="alert('أكاديمي')">
             <i class="fa-solid fa-graduation-cap"></i>
             <span>أكاديمي</span>
         </div>
-        <!-- اليمين: لوحة التحكم -->
         <div class="card" onclick="alert('لوحة التحكم')">
             <img class="card-icon-img" src="https://github.com/basheer-49/zuj/blob/main/Untitled%20(1080%20x%20962%20px).png?raw=true" alt="لوحة التحكم">
             <span>لوحة التحكم</span>
         </div>
-        <!-- الشمال: التسجيل -->
         <div class="card" onclick="alert('التسجيل')">
             <i class="fa-solid fa-id-card"></i>
             <span>التسجيل</span>
         </div>
-        <!-- اليمين: شخصي -->
         <div class="card" onclick="alert('شخصي')">
             <i class="fa-solid fa-address-card"></i>
             <span>شخصي</span>
@@ -456,21 +451,16 @@ body{
 </div>
 
 <script>
-    // عناصر الصفحات
     const homePage = document.getElementById('homePage');
     const settingsPage = document.getElementById('settingsPage');
-
-    // أزرار التحويل
     const settingsBtn = document.getElementById('settingsBtn');
     const homeFromSettingsBtn = document.getElementById('homeFromSettingsBtn');
 
-    // زر الإعدادات في الصفحة الرئيسية -> يظهر صفحة الإعدادات
     settingsBtn.onclick = function() {
         homePage.style.display = 'none';
         settingsPage.style.display = 'block';
     }
 
-    // زر الرئيسية في صفحة الإعدادات -> يعود للصفحة الرئيسية
     homeFromSettingsBtn.onclick = function() {
         settingsPage.style.display = 'none';
         homePage.style.display = 'block';
