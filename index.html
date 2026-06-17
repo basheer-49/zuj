@@ -70,24 +70,20 @@ body{
     cursor:pointer;
 }
 
-/* الأيقونة المربعة الخضراء - صورة PNG صغيرة */
-.notification-bar .notif-icon-box {
+/* الأيقونة - صورة PNG بدون خلفية */
+.notification-bar .notif-icon {
     width:32px;
     height:32px;
-    background:#25a244;
-    border-radius:6px;
+    flex-shrink:0;
     display:flex;
     align-items:center;
     justify-content:center;
-    flex-shrink:0;
-    overflow:hidden;
 }
 
-.notification-bar .notif-icon-box img {
-    width:20px;
-    height:20px;
+.notification-bar .notif-icon img {
+    width:32px;
+    height:32px;
     object-fit:contain;
-    filter:brightness(0) invert(1);
 }
 
 .notification-bar .notif-texts {
@@ -341,8 +337,8 @@ body{
 
     <!-- ===== المستطيل الجديد ===== -->
     <div class="notification-bar" onclick="alert('تنبيهاتي')">
-        <!-- أيقونة مربعة خضراء مع الصورة PNG -->
-        <div class="notif-icon-box">
+        <!-- الصورة PNG بدون خلفية خضراء -->
+        <div class="notif-icon">
             <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQtvjtePMpB8NQDMqTDQg_QUGAYY0QV4VnmLeqioDSZ55NcRmkX" alt="icon">
         </div>
         <div class="notif-texts">
